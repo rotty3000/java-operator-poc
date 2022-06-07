@@ -1,0 +1,9 @@
+-include: ~base.bndrun
+
+-jpms-module-info: \
+	${project.artifactId};\
+		version=${project.version};\
+		ee=JavaSE-${java.specification.version}
+-jpms-module-info-options: \
+	jdk.unsupported;static=false;\
+	java.desktop;static=true

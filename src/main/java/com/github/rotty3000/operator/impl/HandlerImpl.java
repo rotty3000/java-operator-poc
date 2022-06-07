@@ -1,4 +1,4 @@
-package com.github.rotty3000.operator.configmap;
+package com.github.rotty3000.operator.impl;
 
 import org.osgi.service.component.annotations.Component;
 import org.slf4j.Logger;
@@ -9,7 +9,7 @@ import com.github.rotty3000.operator.ResourceHandler;
 import io.fabric8.kubernetes.api.model.ConfigMap;
 
 @Component
-public class ConfigMapHandler implements ResourceHandler<ConfigMap> {
+public class HandlerImpl implements ResourceHandler<ConfigMap> {
 
 	@Override
 	public void onAdd(ConfigMap configMap) {
@@ -35,6 +35,6 @@ public class ConfigMapHandler implements ResourceHandler<ConfigMap> {
 		logger.info("onUpdate: from {}, to {}", oldConfigMap, newConfigMap);
 	}
 
-	private static Logger logger = LoggerFactory.getLogger(ConfigMapHandler.class);
+	private static Logger logger = LoggerFactory.getLogger(HandlerImpl.class);
 
 }
